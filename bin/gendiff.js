@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-// const program = require('commander'); // (normal include)
-//const program = require('../'); // include commander in git clone of commander repo
+import commander from 'commander';
+
+const program = new commander.Command();
 
 program
-  .option('-f, --foo', 'enable some foo');
+  .version('0.1.0')
+  .description('Compares two configuration files and shows a difference.');
 
-// must be before .parse()
 program.on('--help', () => {
   console.log('');
   console.log('Example call:');
   console.log('  $ custom-help --help');
 });
-
 program.parse(process.argv);
